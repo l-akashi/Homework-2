@@ -6,26 +6,26 @@ Please complete the report problem below:
 Provide your profitable path, the amountIn, amountOut value for each swap, and your final reward (your tokenB balance).
 
 > Solution
-profitable path: tokenB->tokenA->tokenC->tokenE->tokenD->tokenC->tokenB
-swap, tokenB->tokenA, AmountIn =  5                  , AmountOut = 5.655321988655322
-swap, tokenA->tokenC, AmountIn =  5.655321988655322  , AmountOut = 2.37213893638309
-swap, tokenC->tokenE, AmountIn =  2.37213893638309   , AmountOut = 1.5301371369636172
-swap, tokenE->tokenD, AmountIn =  1.5301371369636172 , AmountOut = 3.450741448619709
-swap, tokenD->tokenC, AmountIn =  3.450741448619709  , AmountOut = 6.68452557957259
-swap, tokenC->tokenB, AmountIn =  6.68452557957259   , AmountOut = 22.497221806974142
-tokenB balance = 22.497221806974142
+> profitable path: tokenB->tokenA->tokenC->tokenE->tokenD->tokenC->tokenB
+> swap, tokenB->tokenA, AmountIn =  5                  , AmountOut = 5.655321988655322
+> swap, tokenA->tokenC, AmountIn =  5.655321988655322  , AmountOut = 2.37213893638309
+> swap, tokenC->tokenE, AmountIn =  2.37213893638309   , AmountOut = 1.5301371369636172
+> swap, tokenE->tokenD, AmountIn =  1.5301371369636172 , AmountOut = 3.450741448619709
+> swap, tokenD->tokenC, AmountIn =  3.450741448619709  , AmountOut = 6.68452557957259
+> swap, tokenC->tokenB, AmountIn =  6.68452557957259   , AmountOut = 22.497221806974142
+> tokenB balance = 22.497221806974142
 ## Problem 2
 What is slippage in AMM, and how does Uniswap V2 address this issue? Please illustrate with a function as an example.
 
 > Solution
 滑點是指在進行交易時，由於交易對的流動性不足或市場波動，導致交易成交價格與預期價格之間的差異。Uniswap V2通過採用恆定乘積市場製造者（Constant Product Market Maker）的模型來解決這個問題。這個模型通過將兩個資產的數量的乘積保持不變來確保流動性。舉個例子，假設有一個函數 calculateOutputPrice 用於計算購買某個資產所需的價格，Uniswap V2 通過以下方式來處理滑點：
-function calculateOutputPrice(uint256 inputAmount, uint256 inputReserve, uint256 outputReserve) external pure returns (uint256) {
-    require(inputReserve > 0 && outputReserve > 0, "Reserves must be greater than 0");
-    uint256 inputAmountWithFee = inputAmount.mul(997);
-    uint256 numerator = inputAmountWithFee.mul(outputReserve);
-    uint256 denominator = inputReserve.mul(1000).add(inputAmountWithFee);
-    return numerator / denominator;
-}
+> function calculateOutputPrice(uint256 inputAmount, uint256 inputReserve, uint256 outputReserve) external pure returns (uint256) {
+>   require(inputReserve > 0 && outputReserve > 0, "Reserves must be greater than 0");
+>   uint256 inputAmountWithFee = inputAmount.mul(997);
+>   uint256 numerator = inputAmountWithFee.mul(outputReserve);
+>   uint256 denominator = inputReserve.mul(1000).add(inputAmountWithFee);
+>   return numerator / denominator;
+> }
 
 ## Problem 3
 Please examine the mint function in the UniswapV2Pair contract. Upon initial liquidity minting, a minimum liquidity is subtracted. What is the rationale behind this design?
