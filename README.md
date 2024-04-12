@@ -6,14 +6,14 @@ Please complete the report problem below:
 Provide your profitable path, the amountIn, amountOut value for each swap, and your final reward (your tokenB balance).
 
 > Solution
-> profitable path: tokenB->tokenA->tokenC->tokenE->tokenD->tokenC->tokenB
-> swap, tokenB->tokenA, AmountIn =  5                  , AmountOut = 5.655321988655322
-> swap, tokenA->tokenC, AmountIn =  5.655321988655322  , AmountOut = 2.37213893638309
-> swap, tokenC->tokenE, AmountIn =  2.37213893638309   , AmountOut = 1.5301371369636172
-> swap, tokenE->tokenD, AmountIn =  1.5301371369636172 , AmountOut = 3.450741448619709
-> swap, tokenD->tokenC, AmountIn =  3.450741448619709  , AmountOut = 6.68452557957259
-> swap, tokenC->tokenB, AmountIn =  6.68452557957259   , AmountOut = 22.497221806974142
-> tokenB balance = 22.497221806974142
+#### profitable path: tokenB->tokenA->tokenC->tokenE->tokenD->tokenC->tokenB
+#### swap, tokenB->tokenA, AmountIn =  5                  , AmountOut = 5.655321988655322
+#### swap, tokenA->tokenC, AmountIn =  5.655321988655322  , AmountOut = 2.37213893638309
+#### swap, tokenC->tokenE, AmountIn =  2.37213893638309   , AmountOut = 1.5301371369636172
+#### swap, tokenE->tokenD, AmountIn =  1.5301371369636172 , AmountOut = 3.450741448619709
+#### swap, tokenD->tokenC, AmountIn =  3.450741448619709  , AmountOut = 6.68452557957259
+#### swap, tokenC->tokenB, AmountIn =  6.68452557957259   , AmountOut = 22.497221806974142
+#### tokenB balance = 22.497221806974142
 ## Problem 2
 What is slippage in AMM, and how does Uniswap V2 address this issue? Please illustrate with a function as an example.
 
